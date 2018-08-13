@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-foo
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: my-mci-ip
+    kubernetes.io/ingress.class: gce-multi-cluster
+spec:
+  backend:
+    serviceName: service-foo
+    servicePort: 80
